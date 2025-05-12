@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+*{
+    font-family: "Cairo", sans-serif;
+}
+
+body{
+    background-color: rgb(228, 246, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+.todo-container{
+    width: 40rem;
+    background-color: rgb(207, 96, 209);
+    color: white;
+    border-radius: 8px;
+}
+.todo-container .todo-title{
+    text-align: center;
+}
+
+.todo-container .todos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(253, 253, 253);
+    color: black;
+    max-height: 85%;
+}
+
+
+.todo-container .todos-container .todos-content{
+    overflow-y: auto;
+    width: 100%;
+    max-height: 75vh;
+    min-height: 10vh;
+}
+
+.todo-container .todos-container .todo-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    transition: 0.4s;
+}
+.todo-container .todos-container .todo-item-done{
+    background-color: rgb(202, 255, 202);
+}
+.todo-container .todos-container .todo-item-done h4{
+    text-decoration: line-through;
+    
+}
+
+
+.btns{
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-container .todos-container .todo-item .btn {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.todo-container .todos-container .todo-item  .btn-check {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 192, 77);;
+    cursor: pointer;
+    
+}
+.todo-container .todos-container .todo-item  .btn-check:hover {
+    background-color: rgb(77, 192, 77);
+    color: white;
+    border: 1px solid rgb(255, 255, 255);;
+}
+
+.todo-container .todos-container .todo-item  .btn-edit {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 108, 192);
+    cursor: pointer;
+    
+}
+.todo-container .todos-container .todo-item  .btn-edit:hover {
+    background-color: rgb(66, 92, 164);
+    color: white;
+    border: 1px solid rgb(255, 255, 255);;
+}
+.todo-container .todos-container .todo-item  .btn-check-true {
+    background-color: rgb(77, 192, 77);
+    color: white;
+}
+
+
+.todo-container .todos-container .todo-item  .btn-delete {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(192, 77, 77);;
+    cursor: pointer;
+    
+}
+.todo-container .todos-container .todo-item  .btn-delete:hover {
+    background-color: rgb(192, 77, 77);
+    color: white;
+    border: 1px solid rgb(255, 255, 255);;
+}
+
+.todo-container .todos-container .todo-item:hover .btn , .btn-delete ,.btn-check ,.btns {
+
+    visibility: visible;
+
+}
+
+.todo-container .todos-container .btn-add-todo{
+    margin-bottom: -15px;
+}
+.btn-add-todo button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(207, 96, 209);
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    height: 2rem;
+    transition: 0.4s;
+}
+.btn-add-todo button:hover{
+    background-color: rgb(189, 89, 190);
+}
+
+dialog{
+    border: 3px solid rgb(207, 96, 209) ;
+    border-radius: 8px;
+    margin-top: 5%;
+
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+#add-todo-dialog .add-todo-form{
+    background-color: rgb(255, 255, 255);
+}
