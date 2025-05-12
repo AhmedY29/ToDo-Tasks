@@ -8,6 +8,7 @@ let closeDialog = document.getElementById("close-dialog");
 let addDialogBtn = document.getElementById("add-btn");
 let editBtn = document.getElementById("edit-btn");
 let deleteTasks = document.getElementById("delete-tasks");
+let cancelTasksBtnDialog = document.getElementById("cancel-tasks-btn");
 let deleteTasksBtnDialog = document.getElementById("delete-tasks-btn");
 
 // Elements
@@ -99,6 +100,10 @@ getTodos();
 
 deleteTasks.addEventListener("click", () => {
   deleteTasksDialog.open = true;
+});
+
+cancelTasksBtnDialog.addEventListener("click", () => {
+  deleteTasksDialog.open = false;
 });
 
 deleteTasksBtnDialog.addEventListener("click", () => {
