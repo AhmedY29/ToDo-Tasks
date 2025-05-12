@@ -34,9 +34,13 @@
           </div>
         </div>
 
-        <div class="btn-add-todo">
+        <div style="display: flex; gap: 10px" class="btn-add-todo">
           <button id="add-todo">
             <span class="material-symbols-outlined"> add </span> Add Task
+          </button>
+          <button id="delete-tasks">
+            <span class="material-symbols-outlined"> delete </span> Delete All
+            Tasks
           </button>
         </div>
       </div>
@@ -78,6 +82,17 @@
           Do You Want to Delete Task From To Do List are you Sure?
         </p>
         <button id="delete-btn">Delete</button>
+        <button id="cancel-btn">Cancel</button>
+      </div>
+    </dialog>
+
+    <dialog id="delete-tasks-dialog">
+      <div class="title">
+        <h2>Are You Sure?</h2>
+      </div>
+      <div class="add-todo-form">
+        <p id="delete-msg">Do You Want to Delete all Tasks From To Do List?</p>
+        <button id="delete-tasks-btn">Delete</button>
         <button id="cancel-btn">Cancel</button>
       </div>
     </dialog>

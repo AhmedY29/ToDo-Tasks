@@ -7,12 +7,15 @@ let cancelBtn = document.getElementById("cancel-btn");
 let closeDialog = document.getElementById("close-dialog");
 let addDialogBtn = document.getElementById("add-btn");
 let editBtn = document.getElementById("edit-btn");
+let deleteTasks = document.getElementById("delete-tasks");
+let deleteTasksBtnDialog = document.getElementById("delete-tasks-btn");
 
 // Elements
 let todosContent = document.getElementById("todos-content");
 let todosItem = document.getElementById("todo-item");
 let addDialog = document.getElementById("add-todo-dialog");
 let deleteDialog = document.getElementById("delete-todo-dialog");
+let deleteTasksDialog = document.getElementById("delete-tasks-dialog");
 let deleteMsg = document.getElementById("delete-msg");
 let tasksCount = document.getElementById("tasks-count");
 
@@ -93,6 +96,17 @@ edit
 }
 
 getTodos();
+
+deleteTasks.addEventListener("click", () => {
+  deleteTasksDialog.open = true;
+});
+
+deleteTasksBtnDialog.addEventListener("click", () => {
+  todos = [];
+  storeTodos();
+  getTodos();
+  deleteTasksDialog.open = false;
+});
 
 addBtn.addEventListener("click", () => {
   console.log("i'm listen");
