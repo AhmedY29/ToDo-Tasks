@@ -18,6 +18,8 @@ let addDialog = document.getElementById("add-todo-dialog");
 let deleteDialog = document.getElementById("delete-todo-dialog");
 let deleteTasksDialog = document.getElementById("delete-tasks-dialog");
 let deleteMsg = document.getElementById("delete-msg");
+let errorAddMsg = document.getElementById("error-add-msg");
+let errorEditMsg = document.getElementById("error-edit-msg");
 let tasksCount = document.getElementById("tasks-count");
 
 let editDialog = document.getElementById("edit-todo-dialog");
@@ -64,6 +66,8 @@ getStoreTodos();
 
 function getTodos() {
   todosContent.innerHTML = "";
+  deleteTasks.style.display = todos.length <= 0 ? "none" : "flex";
+
   tasksCount.innerText = `Total Tasks: ${todos.length} | Uncompleted tasks: ${
     todos.filter((e) => e.check == false).length
   }`;
@@ -119,14 +123,14 @@ addBtn.addEventListener("click", () => {
 });
 
 closeDialog.addEventListener("click", () => {
-  console.log("i'm listen");
   addDialog.open = false;
+  errorAddMsg.innerText = "";
   editDialog.open = false;
 });
 
 closeEditDialog.addEventListener("click", () => {
-  console.log("i'm listen");
   addDialog.open = false;
+  errorEditMsg.innerText = "";
   editDialog.open = false;
 });
 
@@ -151,6 +155,10 @@ deleteBtn.addEventListener("click", () => {
 });
 
 editBtn.addEventListener("click", () => {
+  if (!inputEdit.value) {
+    errorEditMsg.innerText = "Enter Task Title";
+    return;
+  }
   todos[indexDialog].title = inputEdit.value;
   editDialog.open = false;
   storeTodos();
@@ -173,6 +181,10 @@ const handleCheckTodo = (index) => {
 };
 
 addDialogBtn.addEventListener("click", () => {
+  if (!inputAdd.value) {
+    errorAddMsg.innerText = "ُEnter Task Title";
+    return;
+  }
   let id = todos.length;
 
   let newTask = {

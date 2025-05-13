@@ -61,6 +61,10 @@ body{
     justify-content: space-between;
 }
 
+button{
+    color: black;
+}
+
 .todo-container .todos-container .todo-item .btn {
     visibility: hidden;
     display: flex;
@@ -153,4 +157,11 @@ dialog{
 }
 #add-todo-dialog .add-todo-form{
     background-color: rgb(255, 255, 255);
+}
+
+
+.error-msg{
+    color: rgb(192, 77, 77);
+    text-align: center;
+    font-weight: bold;
 }
