@@ -155,7 +155,7 @@ deleteBtn.addEventListener("click", () => {
 });
 
 editBtn.addEventListener("click", () => {
-  if (!inputEdit.value) {
+  if (inputEdit.value.trim() == "") {
     errorEditMsg.innerText = "Enter Task Title";
     return;
   }
@@ -181,7 +181,7 @@ const handleCheckTodo = (index) => {
 };
 
 addDialogBtn.addEventListener("click", () => {
-  if (!inputAdd.value) {
+  if (inputAdd.value.trim() == "") {
     errorAddMsg.innerText = "ُEnter Task Title";
     return;
   }
@@ -189,12 +189,14 @@ addDialogBtn.addEventListener("click", () => {
 
   let newTask = {
     id,
-    title: inputAdd.value,
+    title: inputAdd.value.trim(),
     check: false,
   };
   todos.push(newTask);
   storeTodos();
   getTodos();
   inputAdd.value = "";
+  errorEditMsg.innerText = "";
+
   addDialog.open = false;
 });
